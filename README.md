@@ -1,16 +1,12 @@
-# docker-auth-proxy
-
-This container image provides a reverse proxy based on nginx to publish the Docker daemon on 2376/TCP using certificate authentication.
-
-## Supported tags and respective `Dockerfile` links
+# Supported tags and respective `Dockerfile` links
 
 - [`latest`](https://github.com/nicholasdille/docker-auth-proxy/blob/master/Dockerfile)
 
-## Purpose
+# Purpose
 
 This container image launches nginx as a reverse proxy. It listens on port 2376/tcp and forwards requests to the local Docker daemon socker `/var/run/docker.sock`. IT does not support insecure connections on 2375/tcp.
 
-## Usage
+# Usage
 
 Example usage:
 
@@ -25,6 +21,14 @@ docker run -d \
 
 The following variables are supported:
 
-- `CA_CRT` must contain the PEM formatted certificate for the certificate authority
-- `SERVER_KEY` must contain the PEM formatted private key for the server certificate
-- `SERVER_CRT` must contain the PEM formatted server certificate
+## `CA_CRT`
+
+... must contain the PEM formatted certificate for the certificate authority
+
+## `SERVER_KEY`
+
+... must contain the PEM formatted private key for the server certificate
+
+## `SERVER_CRT`
+
+... must contain the PEM formatted server certificate
