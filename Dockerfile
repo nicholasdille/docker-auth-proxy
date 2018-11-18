@@ -10,3 +10,5 @@ ENV CA_CRT=""
 ENV SERVER_KEY=""
 ENV SERVER_CRT=""
 ENTRYPOINT [ "/entrypoint.sh" ]
+
+EXPOSE 2376
