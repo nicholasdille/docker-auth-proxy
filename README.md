@@ -17,7 +17,7 @@ docker run -d \
     --env SERVER_CRT=$(cat server_cert.pem) \
     --net=host
     --volume /var/run/docker.sock:/var/run/docker.sock
-    docker-auth-proxy
+    nicholasdille/docker-auth-proxy
 ```
 
 The following variables are supported:
