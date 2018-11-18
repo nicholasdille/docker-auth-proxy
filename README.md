@@ -8,7 +8,7 @@ This container image launches nginx as a reverse proxy. It listens on port 2376/
 
 # Usage
 
-Example usage:
+The reverse proxy listens on port 2376/tcp using TLS. All requests are forwarded to the Docker daemon socket which must be mapped:
 
 ```bash
 docker run -d \
@@ -16,6 +16,7 @@ docker run -d \
     --env SERVER_KEY=$(cat server_key.pem) \
     --env SERVER_CRT=$(cat server_cert.pem) \
     --net=host
+    --volume /var/run/docker.sock:/var/run/docker.sock
     docker-auth-proxy
 ```
 
