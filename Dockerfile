@@ -1,7 +1,7 @@
 FROM nginx:stable-alpine
 
 COPY entrypoint.sh /
-COPY nginx.conf /etc/nginx/
+COPY proxy.conf /etc/nginx/conf.d/
 
 RUN chmod +x /entrypoint.sh \
  && sed -i 's/user  nginx;/user  root;/' /etc/nginx/nginx.conf
